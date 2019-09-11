@@ -8,10 +8,10 @@ const double PI = 3.14157;
 int main()
 {
    
-   double angle = PI / 2;
-   cout << "PI/2 = " << angle << endl;
-   cout << cos(angle) << endl;
-   cout << acos( cos(angle) ) << endl;
+   double theta = PI / 2;
+   cout << "PI/2 = " << theta << endl;
+   cout << cos(theta) << endl;
+   cout << acos( cos(theta) ) << endl;
 
    return 0;
 }
