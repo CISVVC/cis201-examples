@@ -21,6 +21,14 @@ int main()
       cout << "OK, quitting" << endl;
    }
 
+   cout << "Enter a number between 1 and 100 : ";
+   cin >> response;
+
+   if(response < 1 || response > 100)
+   {
+      cout << "That value is invalid" << endl;
+      return 1;
+   }
 
    return 0;
 }
