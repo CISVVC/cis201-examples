@@ -16,6 +16,7 @@ int main()
    set initial_balance to 10000.0
    set balance to initial_balance
    set year to 0
+   print the table header
 
    while balance < 2 * initial_balance
       set year to year + 1
@@ -24,25 +25,28 @@ int main()
 
    print the balance and the year
    */
-   double initial_balance = 10000.0;
+   double initial_balance = 10000;
    double balance = initial_balance;
-   int year = 1;
-   cout << setw(4) << "Year";
-   cout << setw(10) << "Balance";
-   cout << endl << "---------------------";
+   int year = 0;
+   cout << setw(4);
+   cout << "Year" << setw(10) << "Interest";
+   cout << setw(12) << "Balance" << endl;
+   cout << "----------------------------";
    cout << endl;
    cout << fixed << setprecision(2);
-   while(balance <= 2 * initial_balance)
+   while( balance < 2 * initial_balance)
    {
-      year++;
+      year++; 
       double interest = balance * INTEREST_RATE;
       balance = balance + interest;
       cout << setw(4) << year;
-      cout << setw(10) << balance;
+      cout << setw(9) << interest;
+      cout << setw(12) << balance;
       cout << endl;
-
    }
-   cout << endl << "---------------------" << endl;
-   cout << "The year that balance doubles is " << year << endl;
+   cout << "----------------------------" << endl;
+   cout << "Balance=" << balance;
+   cout << "  Year=" << year << endl;
+
    return 0;
 }

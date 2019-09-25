@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {
-   int response = 1;
-   while( response != 0 )
+   int count = 10;
+   while( count >= 0 )
    {
-      cout << "Enter 0 to quit:";
-      cin >> response;
+      cout << "count=" << count << endl;
+      count--;
    }
 
    return 0;
