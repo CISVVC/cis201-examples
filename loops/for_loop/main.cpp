@@ -11,16 +11,16 @@ int main()
    int count = 0;
    while( count < 5  )
    {
-      count++;
       cout << count << endl;
+      count++;
    }
    
    // for loop version
    //  initializer; condition; update
    cout << "With the for loop: " << endl;
-   for(int line=1;line <= 10;line++)
+   for(int count=1;count <= 10;count++);
    {
-      cout << line << endl;
+      cout << count << endl;
    }
 
    // for loop version
@@ -36,7 +36,7 @@ int main()
    cout << "Print all odd numbers from 1 to 21: " << endl;
    for(int number=1;number <= 21; number+=2 )
    {
-         cout << number << endl;
+       cout << number << endl;
    }
 
    return 0;
