@@ -8,21 +8,29 @@ int main()
 {
    double number;
    double sum = 0.0;
+   double sum_square = 0.0;
    int count = 0;
-   // while not end of file
-   while(!(cin.eof()))  // end of file for linux and MacOs is ^d and eof for MSWindows is ^z 
+   bool done=false;
+
+   while(!done)  
    {
-      cout << "Enter a fp number enter ^d to finish: ";
+      cout << "Enter a fp number enter a character to finish: ";
       cin >> number; 
-      if(!(cin.eof()))
+      if(cin.fail())
       {
-         count = count + 1;
+         done = true;
+      }
+      else
+      {
          sum = sum + number;
+         sum_square = sum_square + (number * number);
+         count = count + 1;
       }
    }
    cout << endl;
    cout << "You entered " << count << " numbers" << endl;
    cout << "The sum is: " << sum << endl;
+   cout << "The sum of squares is: " << sum_square << endl;
 
    return 0;
 }
