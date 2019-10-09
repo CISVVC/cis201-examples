@@ -17,9 +17,9 @@ double line(double m,double x,double intercept)
 int main()
 {
     double m = slope(3,0,1,-1);
-    for(int x=0;x<10;x++)
+    for(int x=0;x<25;x++)
     {
-        cout << x << '\t'  << line(m,x,1)<< endl;
+        cout << x << ','  << line(m,x,1)<< endl;
     }
     return 0;
 }
