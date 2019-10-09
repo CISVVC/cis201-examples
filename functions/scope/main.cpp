@@ -1,61 +1,34 @@
 #include<iostream>
-#include<cstdlib>
+#include<cmath>
 
-/**
-scoping rules
-*/
 using namespace std;
 
-const double x = 10.0;
+const double X=10.0;
 
-/*
- a parameter named x
-*/
-double do_something(double &s)
+void print_x(double &x)
 {
-   s = 100;
-   double y = s * 10;
-   return y;
+   x = M_PI;
+   cout << x << endl;
 }
 
-/**
-*/
-void some_function_that_has_an_x()
+void print_n_values(int n)
 {
-   double x = 25;
-  // do something with it 
-}
-
-
-void prompt_for_int(string prompt,int &x)
-{
-   bool done = false;
-   do
+   for(int i = 0;i < n;i++)
    {
-      cout << prompt;
-      cin >> x;
-      done = true;
-      if(cin.fail())
+      cout << "outer:"<< i << endl;
+      for(int j = 0;j < n;j++)
       {
-         cout << "That is not a valid entry, please try again." << endl;
-         cin.clear();
-         cin.ignore();
-         done = false;
+         cout << "inner: " << j << endl;
       }
-   }while(!done);
+   }
 }
-
 
 int main()
 {
-    double x = 20.0;
-    cout << "before call to do_something in main x="<< x << endl;
-    do_something(x);
-    cout << "after call to do_something in main x="<< x << endl;
+   double x = 100;
+   print_x(x);
+   cout << x << endl;
 
-    int intValue;
-    prompt_for_int("Enter an integer: ",intValue);
-    cout << "after call to prompt_for_int in main intValue="<< intValue << endl;
-
-    return 0;
+   //print_n_values(5);
+   return 0;
 }

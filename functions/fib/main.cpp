@@ -13,6 +13,6 @@ int fib(int n)
 
 int main()
 {
-    cout << fib(42) << endl;
+    cout << fib(7) << endl;
     return 0;
 }
