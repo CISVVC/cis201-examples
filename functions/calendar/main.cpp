@@ -38,23 +38,36 @@ bool is_leap_year(int year)
      return false;
 }
 
+/*
+function stub -- left to the student to define this function
+*/
 string get_month_string(int m)
 {
    string month_string;
    return month_string;
 }
 
+/*
+function stub -- left to the student to define this function
+*/
 string blanks(int n)
 {
    string blank_string;
    return blank_string;
 }
 
+/*
+function stub -- left to the student to define this function
+*/
 void print_calendar(int month,int year)
 {
 }
 
-
+/*
+function for input validation
+@param string p the prompt
+@return int value  the value obtained from the user
+*/
 int prompt_int(string p)
 {
    int value;
@@ -77,6 +90,10 @@ int prompt_int(string p)
 	return value;
 }
 
+/*
+   This function is an example of how to use the to_string function
+   to concatenate a string representation of an integer to a given string
+*/
 string string_with_value(string s,int m)
 {
    return s + to_string(m);
@@ -89,12 +106,8 @@ int main()
    int year = 2019;
 
 
-//   year = prompt_int("Enter the year:");
+   year = prompt_int("Enter the year:");
    month = prompt_int("Enter the month:");
-  
-   string sentence = string_with_value("Your value is: ",month);
-
-   cout << sentence << endl;
 
    print_calendar(month,year);
 
