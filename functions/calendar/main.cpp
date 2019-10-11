@@ -83,7 +83,8 @@ int prompt_int(string p)
 			done = false;
 		}
 		else
-		""{ done = true;
+		{ 
+         done = true;
 		}
    }while(!done);
 
