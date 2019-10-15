@@ -78,7 +78,8 @@ int prompt_int(string p)
 		cin >> value;
 		if(cin.fail())
 		{
-			cout << "Invalid entry -- try again" << endl; cin.clear();
+			cout << "Invalid entry -- try again" << endl; 
+         cin.clear();
 			cin.ignore(1000,'\n');
 			done = false;
 		}
@@ -109,6 +110,9 @@ int main()
 
    year = prompt_int("Enter the year:");
    month = prompt_int("Enter the month:");
+
+   string monthname = "January";
+   int length = monthname.length();
 
    print_calendar(month,year);
 
