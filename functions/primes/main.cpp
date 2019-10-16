@@ -38,28 +38,6 @@ precondition n is an integer
 // Define the following function
 void primes(int n)
 {
-   int possible,factor;
-   // treat the first 2 primes as special cases
-   cout << 2 << endl;
-   cout << 3 << endl;
-
-   possible = 5;
-   
-   while(possible <= n)
-   {
-      factor = 3;
-      while(factor * factor < possible && possible % factor != 0)
-      {
-         factor = factor + 2;
-      }
-      
-      if(possible % factor != 0)
-      {
-         cout << possible << endl;
-      }
-
-      possible += 2;
-   }
 }
 
 int main()
