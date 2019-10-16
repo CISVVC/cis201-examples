@@ -111,8 +111,6 @@ int main()
    year = prompt_int("Enter the year:");
    month = prompt_int("Enter the month:");
 
-   string monthname = "January";
-   int length = monthname.length();
 
    print_calendar(month,year);
 
