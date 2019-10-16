@@ -17,6 +17,8 @@ string center_alignment(string innerword,int outersize)
 int main()
 {
    string month = "June 2019";
-   cout << center_alignment(month,80) << endl;
+   string columns = "Su  Mo  Tu  We  Tr  Fr  Sa";
+   cout << center_alignment(month,columns.length()) << endl;
+   cout << columns << endl;
    return 0;
 }
