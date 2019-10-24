@@ -4,41 +4,48 @@
 #include<string>
 
 using namespace std;
-const int SIZE = 10;
 
 string get_month(int m);
 void fill_array(int x[],int count);
+int roll(int upper);
 int sum(int x[],int count);
 int average(int x[],int count);
 int max(int x[],int count);
 int min(int x[],int count);
+void remove_element(int x[],int position,int &size);
 void copy_array(int source[],int dest[],const int SIZE);
 void print_array(int x[],int count,char delimiter);
 
+const int SIZE = 10;
 int main()
 {
     srand(time(0));
       
-    cout << (rand() % 100 + 1) << endl;
-
-    int x[SIZE] = {10, 11,2,9,7,6,5,4,3,1};
+    int i;
+    int x[SIZE];
     int y[SIZE];
-     
+    int current_size = SIZE;
+       
+    fill_array(x,SIZE);
+    cout << endl;
     print_array(x,SIZE,' ');
+    i = SIZE/2; 
+    remove_element(x,i,current_size);
+
+    print_array(x,current_size,' ');
+
     cout << endl;
 
-    cout << "Sum of values in x: " << sum(x,SIZE) << endl;
+    cout << "Sum of values in x: " << sum(x,current_size) << endl;
 
-    copy_array(x,y,SIZE);
+    copy_array(x,y,current_size);
 
-    y[2] = 15;
-    cout << "Sum of values in y: " << sum(y,SIZE) << endl;
-    cout << "Sum of values in x: " << sum(x,SIZE) << endl;
-    cout << "Average of values in x: " << average(x,SIZE) << endl;
-    cout << "Maximum value in x: " << max(x,SIZE) << endl;
-    cout << "Minimum value in x: " << min(x,SIZE) << endl;
+    cout << "Sum of values in y: " << sum(y,current_size) << endl;
+    cout << "Sum of values in x: " << sum(x,current_size) << endl;
+    cout << "Average of values in x: " << average(x,current_size) << endl;
+    cout << "Maximum value in x: " << max(x,current_size) << endl;
+    cout << "Minimum value in x: " << min(x,current_size) << endl;
 
-//  int  cout << get_month(6) << endl;
 
     return 0;
 }
@@ -91,12 +98,32 @@ int min(int x[],int count)
    return min_val;
 }
 
+int roll(int upper)
+{
+   return rand() % upper + 1;
+}
+
 void fill_array(int x[],int count)
 {
+   for(int i = 0; i < count;i++)
+   {
+      cout << "Enter Value:";
+      cin >> x[i];
+   }
+}
+
+void remove_element(int x[],int position,int &size)
+{
+     for(int i=position + 1;i < size;i++)
+     {
+        x[i - 1] = x[i];
+     }
+     size--;
 }
 
 void print_array(int x[],int count,char delimiter)
 {
    for(int i=0;i<count;i++)
       cout << x[i] << delimiter;
+   cout << endl;
 }
