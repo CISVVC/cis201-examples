@@ -12,6 +12,7 @@ int sum(int x[],int count);
 int average(int x[],int count);
 int max(int x[],int count);
 int min(int x[],int count);
+int search(int x[],int key,int size);
 void remove_element(int x[],int position,int &size);
 void copy_array(int source[],int dest[],const int SIZE);
 void print_array(int x[],int count,char delimiter);
@@ -25,7 +26,9 @@ int main()
     int x[SIZE];
     int y[SIZE];
     int current_size = SIZE;
-       
+   
+    x[-1] = 10;
+
     fill_array(x,SIZE);
     cout << endl;
     print_array(x,SIZE,' ');
@@ -107,8 +110,11 @@ void fill_array(int x[],int count)
 {
    for(int i = 0; i < count;i++)
    {
+      /*
       cout << "Enter Value:";
       cin >> x[i];
+      */
+      x[i] = roll(6);
    }
 }
 
@@ -126,4 +132,57 @@ void print_array(int x[],int count,char delimiter)
    for(int i=0;i<count;i++)
       cout << x[i] << delimiter;
    cout << endl;
+}
+
+int search(int x[],int key,int size)
+{
+   int pos = 0;
+   bool found = false;
+   while (pos < size && !found)
+   {
+       if (x[pos] == key)
+       {
+          found = true;
+          break;
+       }
+       else
+       {
+          pos++;
+       }
+   }
+   if(found)
+      return pos;
+   else
+      return -1;
+}
+
+// array a[] has the items to sort; array b[] is a work array.
+void sort(int a[], int n)
+{
+    /* a[0] to a[n-1] is the array to sort */
+    
+    /* advance the position through the entire array */
+    /*   (could do j < n-1 because single element is also min element) */
+    for (int j = 0; j < n-1; j++)
+    {
+        /* find the min element in the unsorted a[j .. n-1] */
+  
+      /* assume the min is the first element */
+      int i_min = j;
+      /* test against elements after j to find the smallest */
+      for (int i = j+1; i < n; i++)
+      {
+          /* if this element is less, then it is the new minimum */
+          if (a[i] < a[i_min])
+          {
+              /* found new minimum; remember its index */
+              i_min = i;
+          }
+      }
+  
+      if (i_min != j) 
+      {
+          std::swap(a[j], a[i_min]);
+      }
+ }
 }
