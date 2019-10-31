@@ -6,14 +6,19 @@ using namespace std;
 
 void print_vector(const vector<int> &v)
 {
+   /*
    for(int i=0;i < v.size(); i++)
       cout << v[i] << " ";
+   */
+
+   for(auto i : v)
+      cout << i << " ";
 }
 
 void print_vector(const vector<double> &v)
 {
-   for(int i=0;i < v.size(); i++)
-      cout << v[i] << " ";
+   for(auto i : v)
+      cout << i << " ";
 }
 
 int main()
@@ -28,6 +33,7 @@ int main()
     vint.push_back(13);
     vint[0] = 20;
     print_vector(vint);
+    cout << endl;
 
     vdouble.push_back(1.2);
     vdouble.push_back(2.2);
