@@ -38,6 +38,8 @@ precondition n is an integer
 // Define the following function
 void primes(int n)
 {
+   int guess = 5;
+   int factor;
 }
 
 int main()
