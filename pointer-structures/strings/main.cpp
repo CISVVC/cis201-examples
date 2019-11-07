@@ -1,6 +1,18 @@
+/***
+NOTE!!!! This is not THE solution to the assignment
+
+The line will need to be "examined" (possibly using a function HINT HINT)
+to print out a line by examining each character from the start of the pointer
+until a new line character is reached
+
+*/
+
 #include<iostream>
+#include<vector>
 #include<string>
 
+
+typedef const char* char_pointer;
 
 using namespace std;
 
@@ -8,6 +20,7 @@ using namespace std;
 int main()
 {
    string input_buffer;
+   vector<char_pointer> lines;
    char ch;
    while(cin.get(ch))
    {
@@ -18,13 +31,17 @@ int main()
       input_buffer += ch;
    }
 
-   const char *s_ptr = input_buffer.c_str();
+   char_pointer s_ptr = input_buffer.c_str();
 
-   while( *s_ptr != '\0')
+   for(int i=0;i<input_buffer.size();i++) 
    {
-      cout << *s_ptr<<endl;
+      if(*s_ptr == '\n')
+         lines.push_back(s_ptr+1);
       s_ptr++;
    }
+
+   for(char_pointer line: lines)
+      cout << line << endl;
 
    return 0;
 }
