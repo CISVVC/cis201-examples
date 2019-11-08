@@ -4,38 +4,34 @@
 
 using namespace std;
 
-const int NUMBER_OF_LINES = 300;
-const int SIZE = 12000;
+const int SIZE = 180000;
+const int LINE_NUMBERS = 300;
+
 int main()
 {
-    char *c = new char[SIZE];
-    char *lines[NUMBER_OF_LINES];
-    char ch; 
+    char *c_ptr = new char[SIZE];
+    char **lines = new char*[LINE_NUMBERS];
+    char ch;
     int i = 0;
-    int line_number=0;
-    char *line = c;
+    int line_number = 0;
+    lines[0] = c_ptr;
     while(cin.get(ch)) 
     {
        if(ch == '\n')
        {
-          lines[line_number] = line;
-          line_number += 1;
-          c[i] = '\0';
-          line = &(c[i+1]);
+          line_number++;
+          lines[line_number] = &(c_ptr[i+1]);
        }
-       else
-       {
-          c[i] = ch;
-       }
+       c_ptr[i] = ch;
        i++;
     }
-
-    for(int i=0;i < line_number;i++)
+    for(int i=0;i<line_number;i++)
     {
-      cout << lines[i] << endl;
+    // think about writing a function to print one character at time
+       cout << lines[i];
     }
-    cout << "lines=" << line_number << endl;
-    cout << "characters=" << i << endl;
 
+    cout << "Lines: " << line_number << endl;
+    cout << "Characters: " << i << endl;
     return 0;
 }
