@@ -1,43 +1,58 @@
 #include<iostream>
 #include<string>
+#include<cstring>
 
 using namespace std;
 
 
+void print_string(const char* s)
+{
+   while(*s != '\n')
+   {
+      cout << *s;
+      s++;
+   }
+   cout << endl;
+
+}
+
 int main()
 {
     string input;
-    input = input + 'T';
-    input +=  'h';
-    input +=  'i';
-    input +=  's';
-    input +=  ' ';
-    input +=  'i';
-    input +=  's';
-    input +=  ' ';
-    input +=  'a';
-    input +=  ' ';
-    input +=  's';
-    input +=  't';
-    input +=  'r';
-    input +=  'i';
-    input +=  'n';
-    input +=  'g';
+    char ch;
 
-    //cout << input << endl;
-    for(char c : input)
-       cout << c << endl;
-
-    for(int i=0;i<input.size();i++)
-       cout << input[i] << endl;
-
-    const char *char_ptr;
-    char_ptr = input.c_str();
-    while(*char_ptr != '\0')
+    int lines = 0;
+// **** INPUT AND STORAGE *****
+    while(cin.get(ch))
     {
-       cout << *char_ptr << endl;
-       char_ptr++;
+       if(ch == '\n')
+          lines++;
+       input += ch;   // this is the STORAGE part
     }
+    const char *c = input.c_str();
+    const char **line_array = new const char*[lines];
+    line_array[0] = c;
+    print_string(line_array[0]);
+    while(*c != '\n')
+       c++;
+    line_array[1] = (c+1);
+    c++;
+    print_string(line_array[1]);
+    while(*c != '\n')
+       c++;
+    line_array[2] = (c+1);
+    c++;
+    print_string(line_array[2]);
+    while(*c != '\n')
+       c++;
+    line_array[3] = (c+1);
+    c++;
+    print_string(line_array[3]);
+    while(*c != '\n')
+       c++;
+    line_array[4] = (c+1);
+    c++;
+    print_string(line_array[4]);
 
     return 0;
 }
