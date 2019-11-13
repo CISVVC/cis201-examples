@@ -35,23 +35,23 @@ int main()
     print_string(line_array[0]);
     while(*c != '\n')
        c++;
-    line_array[1] = (c+1);
     c++;
+    line_array[1] = c;
     print_string(line_array[1]);
     while(*c != '\n')
        c++;
-    line_array[2] = (c+1);
     c++;
+    line_array[2] = c;
     print_string(line_array[2]);
     while(*c != '\n')
        c++;
-    line_array[3] = (c+1);
     c++;
+    line_array[3] = c;
     print_string(line_array[3]);
     while(*c != '\n')
        c++;
-    line_array[4] = (c+1);
     c++;
+    line_array[4] = c;
     print_string(line_array[4]);
 
     return 0;
