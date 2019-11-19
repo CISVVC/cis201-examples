@@ -31,29 +31,16 @@ int main()
     }
     const char *c = input.c_str();
     const char **line_array = new const char*[lines];
-    line_array[0] = c;
-    while(*c != '\n')
+    for(int i=0;i<lines;i++)
+    {
+       line_array[i] = c;
+       while(*c != '\n')
+          c++;
        c++;
-    c++;
-    line_array[1] = c;
-    while(*c != '\n')
-       c++;
-    c++;
-    line_array[2] = c;
-    while(*c != '\n')
-       c++;
-    c++;
-    line_array[3] = c;
-    while(*c != '\n')
-       c++;
-    c++;
-    line_array[4] = c;
-
-    print_string(line_array[4]);
-    print_string(line_array[3]);
-    print_string(line_array[2]);
-    print_string(line_array[1]);
-    print_string(line_array[0]);
+    }
+   
+    for(int i=lines-1;i>=0;i--)
+      print_string(line_array[i]);
 
     return 0;
 }
