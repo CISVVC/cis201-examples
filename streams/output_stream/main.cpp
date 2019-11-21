@@ -16,7 +16,7 @@ int main()
 
     for(int i=0;i<=360;i++)
     {
-         output << i << "\t" << sin(rad(i)) << endl;
+         output << i << "," << sin(rad(i)) << endl;
     }
 
     return 0;
