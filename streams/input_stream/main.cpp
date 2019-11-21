@@ -8,20 +8,21 @@ using namespace std;
 int main()
 {
 
-   ifstream input;
-
-   input.open("/usr/share/dict/words");
-
-   string word;
-   vector<string> word_list;
-
-   while(input >> word)
+   ifstream input("alice.txt");
+   
+   if(input.fail())
    {
-      word_list.push_back(word);
+      cout << "File did not open" << endl;
    }
-
-   for(string w : word_list)
-      cout << w << endl;
+   else 
+   {
+      //input.open("alice.txt");
+      char ch;
+      while(input.get(ch))
+      {
+         cout << ch;
+      }
+   }
 
    return 0;
 
