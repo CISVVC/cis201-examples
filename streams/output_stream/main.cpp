@@ -12,7 +12,7 @@ double rad(double deg)
 
 int main()
 {
-    ofstream output("data.txt");
+    ofstream output("data.csv");
 
     for(int i=0;i<=360;i++)
     {
