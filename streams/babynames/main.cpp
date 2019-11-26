@@ -21,20 +21,22 @@ void process_name(ifstream& in_file, double& total)
    total = total - percent;
 }
 
+const double PERCENTAGE = 50;
+
 int main()
 {  
    ifstream in_file;
    in_file.open("babynames.txt");
    if (in_file.fail()) { return 0; } // Check for failure after opening
 
-   double boy_total = 50;
-   double girl_total = 50;
+   double boy_total = PERCENTAGE;
+   double girl_total = PERCENTAGE;
 
    while (boy_total > 0 || girl_total > 0)
    {
       int rank;
       in_file >> rank;
-      if (in_file.fail()) { return 0; } 
+      if (in_file.fail()) { break; } 
       
       cout << rank << " ";
 

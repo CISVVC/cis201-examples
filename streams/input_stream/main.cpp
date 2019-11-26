@@ -1,26 +1,26 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-#include<vector>
 
 using namespace std;
 
 int main()
 {
 
-   ifstream input("alice.txt");
-   
+   ifstream input;
+   input.open("alice.txt");
+
    if(input.fail())
    {
-      cout << "File did not open" << endl;
+      cout << "File not found or is unreadable" << endl;
    }
-   else 
+   else
    {
-      //input.open("alice.txt");
-      char ch;
-      while(input.get(ch))
+      string word;
+      while(!input.eof())
       {
-         cout << ch;
+         input >> word;
+         cout << word << endl;
       }
    }
 
