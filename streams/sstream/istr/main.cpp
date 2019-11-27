@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+   /*
    string s = "$120";
    istringstream istrstrm(s);
    string buffer="";
@@ -22,6 +23,7 @@ int main()
       }
    }
    cout << setprecision(2) << stod(buffer) << endl;
+   */
 
    istringstream strm;
    strm.str("January 24, 1973");
