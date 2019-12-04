@@ -5,23 +5,25 @@
 
 using namespace std;
 
+string get_next_word(fstream &fs)
+{
+   // sequential
+   char c;
+   string word;
+   while(!fs.eof() && c != ' ')
+   {
+      fs.get(c);
+      if(c != ' ')
+         word += c;
+   }
+   return word;
+}
 
 int main()
 {
    fstream strm("alice.txt");
- 
-   // sequential
-   /*
-   char c;
-   while(strm.get(c))
-   {
-      cout << c;
-   }
-   cout << "******************" << endl;
-   cout << "last character is: ";
-   strm.get(c);
-   cout << c;
-   */
+
+
    strm.seekg(35);
    string word;
    strm >> word;
@@ -29,8 +31,14 @@ int main()
    cout << strm.tellg();
 
    strm.seekp(38);
-   strm << "wonderland";
+   strm << "WONDERLAND";
    strm.close();
+
+   strm.open("alice.txt");
+   while(!strm.eof())
+   {
+      cout << get_next_word(strm) << endl;
+   }
 
    return 0;
 }
