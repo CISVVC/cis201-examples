@@ -35,7 +35,7 @@ string lower_case(const string &s)
 {
    string lowered="";
    for(int i=0;i<s.size();i++)
-      lowered[i] = tolower(s[i]);
+      lowered += tolower(s[i]);
    return lowered;
 }
 
